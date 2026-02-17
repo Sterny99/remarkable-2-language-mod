@@ -1,0 +1,1 @@
+C:\Users\Administrator\Documents\GitHub\remarkable-2-language-mod\rm-xochitl-kbdpatch\target\armv7-unknown-linux-musleabihf\release\rm-xochitl-kbdpatch: C:\Users\Administrator\Documents\GitHub\remarkable-2-language-mod\rm-xochitl-kbdpatch\src\main.rs

@@ -1,0 +1,13 @@
+[Unit]
+Description=rm-ssh-ensure (usb0 + dropbear up)
+After=local-fs.target
+Wants=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/root/bin/rm-ssh-ensure.sh
+TimeoutStartSec=130
+RemainAfterExit=no
+
+[Install]
+WantedBy=multi-user.target

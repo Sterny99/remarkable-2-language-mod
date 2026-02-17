@@ -1,0 +1,42 @@
+{
+  "inherits": "en_US",
+  "alphabetic": [
+    [
+      { "default": ["/"], "shifted": ["/"] },
+      { "default": ["'"], "shifted": ["'"] },
+      { "default": ["ק"], "shifted": ["ק"] },
+      { "default": ["ר"], "shifted": ["ר"] },
+      { "default": ["א"], "shifted": ["א"] },
+      { "default": ["ט"], "shifted": ["ט"] },
+      { "default": ["ו"], "shifted": ["ו"] },
+      { "default": ["נ"], "shifted": ["ן"] },
+      { "default": ["מ"], "shifted": ["ם"] },
+      { "default": ["פ"], "shifted": ["ף"] },
+      { "default": ["״"], "shifted": ["׳"] }
+    ],
+    [
+      { "default": ["ש"], "shifted": ["ש"] },
+      { "default": ["ד"], "shifted": ["ד"] },
+      { "default": ["ג"], "shifted": ["ג"] },
+      { "default": ["כ"], "shifted": ["ך"] },
+      { "default": ["ע"], "shifted": ["ע"] },
+      { "default": ["י"], "shifted": ["י"] },
+      { "default": ["ח"], "shifted": ["ח"] },
+      { "default": ["ל"], "shifted": ["ל"] },
+      { "default": ["ת"], "shifted": ["ת"] },
+      { "default": ["־"], "shifted": ["—"] },
+      { "default": ["…"], "shifted": ["•"] }
+    ],
+    [
+      { "special": "shift" },
+      { "default": ["ז"], "shifted": ["ז"] },
+      { "default": ["ס"], "shifted": ["ס"] },
+      { "default": ["ב"], "shifted": ["ב"] },
+      { "default": ["ה"], "shifted": ["ה"] },
+      { "default": ["נ"], "shifted": ["ן"] },
+      { "default": ["מ"], "shifted": ["ם"] },
+      { "default": ["צ"], "shifted": ["ץ"] },
+      { "special": "backspace" }
+    ]
+  ]
+}

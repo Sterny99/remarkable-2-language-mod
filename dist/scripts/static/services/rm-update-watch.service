@@ -1,0 +1,15 @@
+[Unit]
+Description=rm-update-watch (sync on update staged)
+After=local-fs.target
+ConditionPathExists=/usr/bin/update_engine_client
+
+[Service]
+Type=simple
+ExecStart=/home/root/bin/rm-update-watch.sh
+Restart=always
+RestartSec=20
+Nice=19
+IOSchedulingClass=idle
+
+[Install]
+WantedBy=multi-user.target

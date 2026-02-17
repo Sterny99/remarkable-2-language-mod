@@ -1,0 +1,14 @@
+[Unit]
+Description=rm-slot-sync (persist units/font/drop-in across A/B rootfs)
+DefaultDependencies=no
+Before=shutdown.target reboot.target halt.target poweroff.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/root/bin/rm-slot-sync.sh
+TimeoutStartSec=8
+KillMode=process
+RemainAfterExit=no
+
+[Install]
+WantedBy=shutdown.target reboot.target halt.target poweroff.target

@@ -1,0 +1,9 @@
+C:\Users\Administrator\Documents\GitHub\remarkable-2-language-mod\rm-xochitl-kbdpatch\target\armv7-unknown-linux-musleabihf\release\deps\zstd_sys-2a8dc25129b9ce75.d: C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\zstd-sys-2.0.16+zstd.1.5.7\src\lib.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\zstd-sys-2.0.16+zstd.1.5.7\src\bindings_zstd.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\zstd-sys-2.0.16+zstd.1.5.7\src\bindings_zdict.rs
+
+C:\Users\Administrator\Documents\GitHub\remarkable-2-language-mod\rm-xochitl-kbdpatch\target\armv7-unknown-linux-musleabihf\release\deps\libzstd_sys-2a8dc25129b9ce75.rlib: C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\zstd-sys-2.0.16+zstd.1.5.7\src\lib.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\zstd-sys-2.0.16+zstd.1.5.7\src\bindings_zstd.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\zstd-sys-2.0.16+zstd.1.5.7\src\bindings_zdict.rs
+
+C:\Users\Administrator\Documents\GitHub\remarkable-2-language-mod\rm-xochitl-kbdpatch\target\armv7-unknown-linux-musleabihf\release\deps\libzstd_sys-2a8dc25129b9ce75.rmeta: C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\zstd-sys-2.0.16+zstd.1.5.7\src\lib.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\zstd-sys-2.0.16+zstd.1.5.7\src\bindings_zstd.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\zstd-sys-2.0.16+zstd.1.5.7\src\bindings_zdict.rs
+
+C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\zstd-sys-2.0.16+zstd.1.5.7\src\lib.rs:
+C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\zstd-sys-2.0.16+zstd.1.5.7\src\bindings_zstd.rs:
+C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\zstd-sys-2.0.16+zstd.1.5.7\src\bindings_zdict.rs:
