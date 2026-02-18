@@ -12,7 +12,7 @@ This patch was succesfully tested on the **reMarkable 2** and may brick other de
 1. Connect your **reMarkable 2** to your PC and make sure it's powered on.
 2. Download/fork this repo.
 3. Navigate to the **dist** folder.
-4. **Right click** on **install.ps1**.
+4. **Right click** on **install.ps1** -> **Run with Powershell**.
 5. Enter your ssh password and hit enter.
 
 Your tablet will restart a few times and now your **German** keyboard will display with **Hebrew**.
