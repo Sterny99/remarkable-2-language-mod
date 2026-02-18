@@ -7,10 +7,11 @@ Currently, the code is configured to install the Hebrew language, however it's p
 This patch was succesfully tested on the **reMarkable 2** and may brick other devices like the **reMarkable pro**.
 
 **Simple & easy install instructions:**
-1. Download/fork the repo.
-2. Navigate to the **dist** folder.
-3. **Right click** on **install.ps1**.
-4. Enter your ssh password and hit enter.
+1. Connect your **reMarkable 2** to your PC and make sure it's powered on.
+2. Download/fork this repo.
+3. Navigate to the **dist** folder.
+4. **Right click** on **install.ps1**.
+5. Enter your ssh password and hit enter.
 
 Your tablet will restart a few times and now your **German** keyboard will display with **Hebrew**.
 
