@@ -1,14 +1,15 @@
 # reMarkable 2 Language Mod
 
-If this helps you, the only thing I ask in return is a **thank you**.
+This project patches the reMarkable 2 **xochitl** binary to replace the **German** keyboard with a custom font and language.
+The patch is designed to **persistent across reboots and OS updates** — **without needing a PC to re-patch after updates**.
+Currently, the code is configured to install the Hebrew language, however it's possible to install any language with minimal changes.
 
-### Best way to leave feedback (GitHub)
-- **Quick thank you / story:** open the repo → click **Discussions** → **New discussion** → choose *Show and tell* (or *General*).
+This patch was succesfully tested on the **reMarkable 2** and may brick other devices like the **reMarkable pro**.
+
+Simply download/fork the repo, navigate to the **dist** folder, **right click** on **install.ps1**, enter your ssh password and voilà.
+Your tablet will restart a few times. Open a note, switch your on screen keyboard to **German** and you'll see it's replaced with **Hebrew**.
 
 ---
-
-Patch the reMarkable 2 on-screen keyboard (OSK) by **surgically editing `xochitl` in place** and keeping it **persistent across reboots + OS updates** — **without needing a PC to re-patch after updates**.
-
 This repo is intentionally narrow, because narrow is how you ship something that doesn’t explode:
 
 - Replaces the **German language slot** (`de_DE`) with your **custom keyboard layout** (example: Hebrew).
