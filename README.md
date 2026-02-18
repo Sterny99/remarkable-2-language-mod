@@ -8,7 +8,7 @@ Currently, the code is configured to install the Hebrew language, however it's p
 
 This patch was succesfully tested on the **reMarkable 2** and may brick other devices like the **reMarkable pro**.
 
-**Simple & easy install instructions:**
+**Simple & easy install instructions (Hebrew):**
 1. Connect your **reMarkable 2** to your PC and make sure it's powered on.
 2. Download/fork this repo.
 3. Navigate to the **dist** folder.
@@ -16,6 +16,11 @@ This patch was succesfully tested on the **reMarkable 2** and may brick other de
 5. Enter your ssh password and hit enter.
 
 Your tablet will restart a few times and now your **German** keyboard will display with **Hebrew**.
+
+**Want a different language or font?**
+1. Navigate to **/dist/scripts** and replace **hebrew.ttf** with whatever font you want.
+2. Still inside **/dist/scripts** edit the **keyboard_layout.json** file with your preferred language.
+3. **That's it!** Follow the install guide above for your custom language!
 
 ---
 This repo is intentionally narrow, because narrow is how you ship something that doesn’t explode:
