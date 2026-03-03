@@ -1,0 +1,10 @@
+C:\Users\Administrator\Documents\GitHub\remarkable-2-language-mod\rm-xochitl-kbdpatch\target\armv7-unknown-linux-musleabihf\release\deps\plain-37f6c94cc70524e6.d: C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\plain-0.2.3\src\lib.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\plain-0.2.3\src\error.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\plain-0.2.3\src\plain.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\plain-0.2.3\src\methods.rs
+
+C:\Users\Administrator\Documents\GitHub\remarkable-2-language-mod\rm-xochitl-kbdpatch\target\armv7-unknown-linux-musleabihf\release\deps\libplain-37f6c94cc70524e6.rlib: C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\plain-0.2.3\src\lib.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\plain-0.2.3\src\error.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\plain-0.2.3\src\plain.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\plain-0.2.3\src\methods.rs
+
+C:\Users\Administrator\Documents\GitHub\remarkable-2-language-mod\rm-xochitl-kbdpatch\target\armv7-unknown-linux-musleabihf\release\deps\libplain-37f6c94cc70524e6.rmeta: C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\plain-0.2.3\src\lib.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\plain-0.2.3\src\error.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\plain-0.2.3\src\plain.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\plain-0.2.3\src\methods.rs
+
+C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\plain-0.2.3\src\lib.rs:
+C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\plain-0.2.3\src\error.rs:
+C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\plain-0.2.3\src\plain.rs:
+C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\plain-0.2.3\src\methods.rs:

@@ -1,0 +1,10 @@
+C:\Users\Administrator\Documents\GitHub\remarkable-2-language-mod\rm-xochitl-kbdpatch\target\armv7-unknown-linux-musleabihf\release\deps\log-f45ac71d2cfd71ac.d: C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.29\src\lib.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.29\src\macros.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.29\src\serde.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.29\src\__private_api.rs
+
+C:\Users\Administrator\Documents\GitHub\remarkable-2-language-mod\rm-xochitl-kbdpatch\target\armv7-unknown-linux-musleabihf\release\deps\liblog-f45ac71d2cfd71ac.rlib: C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.29\src\lib.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.29\src\macros.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.29\src\serde.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.29\src\__private_api.rs
+
+C:\Users\Administrator\Documents\GitHub\remarkable-2-language-mod\rm-xochitl-kbdpatch\target\armv7-unknown-linux-musleabihf\release\deps\liblog-f45ac71d2cfd71ac.rmeta: C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.29\src\lib.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.29\src\macros.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.29\src\serde.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.29\src\__private_api.rs
+
+C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.29\src\lib.rs:
+C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.29\src\macros.rs:
+C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.29\src\serde.rs:
+C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\log-0.4.29\src\__private_api.rs:

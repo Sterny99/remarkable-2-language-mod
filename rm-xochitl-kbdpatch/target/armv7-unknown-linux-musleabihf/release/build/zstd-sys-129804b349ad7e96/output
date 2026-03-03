@@ -7,7 +7,7 @@ HOST = Some(x86_64-pc-windows-msvc)
 cargo:rerun-if-env-changed=CC_armv7-unknown-linux-musleabihf
 CC_armv7-unknown-linux-musleabihf = None
 cargo:rerun-if-env-changed=CC_armv7_unknown_linux_musleabihf
-CC_armv7_unknown_linux_musleabihf = Some(C:\Users\Administrator\AppData\Local\cargo-zigbuild\0.22.0\zigcc-armv7-unknown-linux-musleabihf-5bb.bat)
+CC_armv7_unknown_linux_musleabihf = Some(C:\Users\Administrator\AppData\Local\cargo-zigbuild\0.22.1\zigcc-armv7-unknown-linux-musleabihf-5bb.bat)
 RUSTC_WRAPPER = None
 cargo:rerun-if-env-changed=CC_ENABLE_DEBUG_OUTPUT
 cargo:rerun-if-env-changed=CRATE_CC_NO_DEFAULTS
@@ -103,7 +103,7 @@ exit code: 0
 cargo:rerun-if-env-changed=AR_armv7-unknown-linux-musleabihf
 AR_armv7-unknown-linux-musleabihf = None
 cargo:rerun-if-env-changed=AR_armv7_unknown_linux_musleabihf
-AR_armv7_unknown_linux_musleabihf = Some(C:\Users\Administrator\AppData\Local\cargo-zigbuild\0.22.0\ar.exe)
+AR_armv7_unknown_linux_musleabihf = Some(C:\Users\Administrator\AppData\Local\cargo-zigbuild\0.22.1\ar.exe)
 cargo:rerun-if-env-changed=ARFLAGS
 ARFLAGS = None
 cargo:rerun-if-env-changed=TARGET_ARFLAGS

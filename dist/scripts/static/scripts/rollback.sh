@@ -21,6 +21,16 @@ else
   log "[rb] no xochitl backup found; leaving /usr/bin/xochitl as-is"
 fi
 
+
+LIBEP=/usr/lib/plugins/platforms/libepaper.so
+BK2="$(ls -1t $BKDIR/libepaper.*.orig 2>/dev/null | head -n 1 || true)"
+if [ -n "$BK2" ] && [ -f "$BK2" ]; then
+  log "[rb] restore $BK2 -> $LIBEP"
+  cp -f "$BK2" "$LIBEP" 2>/dev/null || dd if="$BK2" of="$LIBEP" bs=1M conv=fsync 2>/dev/null || true
+  chmod 0644 "$LIBEP" 2>/dev/null || true
+else
+  log "[rb] no libepaper backup found; leaving $LIBEP as-is"
+fi
 log "[rb] disable/remove services + drop-ins"
 systemctl disable rm-customizations.service 2>/dev/null || true
 systemctl disable rm-slot-sync.service 2>/dev/null || true
@@ -44,6 +54,7 @@ systemctl daemon-reload 2>/dev/null || true
 
 log "[rb] remove state"
 rm -f /home/root/.cache/rm-custom/state.env 2>/dev/null || true
+rm -f /home/root/.cache/rm-custom/epaper-state.json 2>/dev/null || true
 
 # Back to ro (best-effort)
 mount -o remount,ro / 2>/dev/null || true

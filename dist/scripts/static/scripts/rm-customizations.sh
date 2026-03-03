@@ -130,7 +130,7 @@ NEED_PATCH=0
 if [ -x "$BIN" ] && [ -f "$JSON" ]; then
   echo "[cus] check if patch needed..." >> "$LOG"
   RC=0
-  run_tmo 8 "$BIN" --locale "$LOCALE" --json "$JSON" --check >>"$LOG" 2>&1 || RC=$?
+  run_tmo 8 "$BIN" --locale "$LOCALE" --json "$JSON" --check --typefolio >>"$LOG" 2>&1 || RC=$?
   echo "[cus] check rc=$RC (0=ok/unchanged,2=needs patch)" >> "$LOG"
   [ "$RC" = "2" ] && NEED_PATCH=1
 else
@@ -152,7 +152,7 @@ if [ "$NEED_PATCH" = "1" ]; then
   fi
 
   RC2=0
-  run_tmo 25 "$BIN" --locale "$LOCALE" --json "$JSON" --verbose >>"$LOG" 2>&1 || RC2=$?
+  run_tmo 25 "$BIN" --locale "$LOCALE" --json "$JSON" --verbose --typefolio >>"$LOG" 2>&1 || RC2=$?
   echo "[cus] patch rc=$RC2" >> "$LOG"
 
   # Validate ELF header (brick-aware)

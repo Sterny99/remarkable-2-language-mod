@@ -87,6 +87,7 @@ memmap2 = "0.9"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 sha2 = "0.10"
+goblin = "0.9"
 zstd = "0.13"
 '@
   Write-Utf8NoBom $CargoToml $CargoTomlText

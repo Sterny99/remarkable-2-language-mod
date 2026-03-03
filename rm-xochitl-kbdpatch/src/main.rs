@@ -10,6 +10,8 @@ use std::fs::{self, File, OpenOptions};
 use std::io::{Read, Seek, SeekFrom, Write};
 use std::path::{Path, PathBuf};
 
+mod epaper;
+
 const MAGIC_ZSTD: &[u8; 4] = b"\x28\xb5\x2f\xfd";
 const STATE_SCHEMA: &str = "kbdpatch-state-v2";
 
@@ -51,6 +53,18 @@ struct Args {
     /// Force: ignore state.json match and proceed (useful for debugging).
     #[arg(long)]
     force: bool,
+
+    /// Also patch Type Folio keymap table inside libepaper.so (repurposes de_DE table)
+    #[arg(long)]
+    typefolio: bool,
+
+    /// Type Folio / Qt platform plugin (default /usr/lib/plugins/platforms/libepaper.so)
+    #[arg(long, default_value = "/usr/lib/plugins/platforms/libepaper.so")]
+    libepaper: PathBuf,
+
+    /// State file for libepaper idempotence (separate from state.json)
+    #[arg(long, default_value = "/home/root/.cache/rm-custom/epaper-state.json")]
+    epaper_state: PathBuf,
 }
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
@@ -116,6 +130,7 @@ fn run(args: &Args) -> Result<Outcome> {
     if let Some(p) = args.state.parent() {
         fs::create_dir_all(p).ok();
     }
+    if let Some(p) = args.epaper_state.parent() { fs::create_dir_all(p).ok(); }
     fs::create_dir_all(&args.dump_dir).ok();
 
     if !args.json.exists() {
@@ -135,6 +150,7 @@ fn run(args: &Args) -> Result<Outcome> {
     // Schema-bumped hash so new binaries can intentionally invalidate prior state.
     let over_min = serde_json::to_vec(&over_v)?;
     let over_sha = sha256_with_schema(&over_min);
+let over_sha_ep = epaper::override_sha(&over_min);
 
     let sha_cur = sha256_file(&args.xochitl)?;
     if args.verbose {
@@ -147,43 +163,63 @@ fn run(args: &Args) -> Result<Outcome> {
 
     let st_opt = read_state(&args.state);
 
-    // CHECK MODE: do not scan or modify; only answer "needs patch?"
-    if args.check {
-        if let Some(st) = &st_opt {
-            if st.schema == STATE_SCHEMA
-                && st.patched_sha == sha_cur
-                && st.override_sha == over_sha
-                && st.locale == args.locale
-            {
-                if args.verbose {
-                    println!("[kbdpatch] CHECK: no patch needed (state matches)");
-                }
-                return Ok(Outcome::Unchanged);
-            }
-        }
+let xo_state_ok = st_opt.as_ref().map(|st| {
+    st.schema == STATE_SCHEMA && st.patched_sha == sha_cur && st.override_sha == over_sha && st.locale == args.locale
+}).unwrap_or(false);
+
+let need_xo = !xo_state_ok;
+let need_ep = if args.typefolio {
+    epaper::needs_patch(&args.libepaper, &args.locale, &args.epaper_state, &over_sha_ep)?
+} else {
+    false
+};
+
+// CHECK MODE: do not scan or modify; only answer "needs patch?"
+if args.check {
+    if args.verbose {
+        println!("[kbdpatch] CHECK: need_xochitl={} need_typefolio={}", need_xo, need_ep);
+    }
+    if !need_xo && !need_ep {
         if args.verbose {
-            println!("[kbdpatch] CHECK: patch needed");
+            println!("[kbdpatch] CHECK: no patch needed (state matches)");
         }
-        return Ok(Outcome::Patched);
+        return Ok(Outcome::Unchanged);
     }
-
-    // Normal early-exit (unless forced)
-    if !args.force {
-        if let Some(st) = &st_opt {
-            if st.schema == STATE_SCHEMA
-                && st.patched_sha == sha_cur
-                && st.override_sha == over_sha
-                && st.locale == args.locale
-            {
-                if args.verbose {
-                    println!("[kbdpatch] UNCHANGED (state matches)");
-                }
-                return Ok(Outcome::Unchanged);
-            }
-        }
+    if args.verbose {
+        println!("[kbdpatch] CHECK: patch needed");
     }
+    return Ok(Outcome::Patched);
+}
 
-    ensure_backup(&args.xochitl, &args.backup_dir, &sha_cur)?;
+// Normal early-exit (unless forced)
+if !args.force && !need_xo && !need_ep {
+    if args.verbose {
+        println!("[kbdpatch] UNCHANGED (state matches)");
+    }
+    return Ok(Outcome::Unchanged);
+}
+
+// Patch Type Folio keymap (libepaper.so) first, so we can early-return without scanning xochitl.
+let mut ep_changed = false;
+if args.typefolio {
+    let kc_map = epaper::build_keycode_map_from_matrix(&over_v).context("build matrix mapping")?;
+    ep_changed = epaper::apply_patch(
+        &args.libepaper,
+        &args.locale,
+        &kc_map,
+        &args.backup_dir,
+        &args.epaper_state,
+        &over_sha_ep,
+        args.verbose,
+        args.force,
+    )?;
+}
+
+// If xochitl is already good (and we are not forcing), skip the heavy scan/patch.
+if !args.force && !need_xo {
+    return Ok(if ep_changed { Outcome::Patched } else { Outcome::Unchanged });
+}
+ensure_backup(&args.xochitl, &args.backup_dir, &sha_cur)?;
 
     let f = File::open(&args.xochitl)?;
     let mm = unsafe { Mmap::map(&f)? };
@@ -255,7 +291,7 @@ fn run(args: &Args) -> Result<Outcome> {
                         if args.verbose {
                             println!("[kbdpatch] UNCHANGED (already matches desired mapping)");
                         }
-                        return Ok(Outcome::Unchanged);
+                        return Ok(if ep_changed { Outcome::Patched } else { Outcome::Unchanged });
                     }
 
                     validate_layout(&after)?;
@@ -409,7 +445,7 @@ fn run(args: &Args) -> Result<Outcome> {
         if args.verbose {
             println!("[kbdpatch] UNCHANGED (already matches desired mapping)");
         }
-        return Ok(Outcome::Unchanged);
+        return Ok(if ep_changed { Outcome::Patched } else { Outcome::Unchanged });
     }
 
     validate_layout(&after)?;
